@@ -70,7 +70,8 @@ class AtariEnv(gym.Env, utils.EzPickle):
 
     def _step(self, a):
         reward = 0.0
-        action = self._action_set[a]
+        # action = self._action_set[a]
+        action = a
 
         if isinstance(self.frameskip, int):
             num_steps = self.frameskip
@@ -129,6 +130,7 @@ class AtariEnv(gym.Env, utils.EzPickle):
             'LEFT':    ord('a'),
             'RIGHT':   ord('d'),
             'FIRE':    ord(' '),
+            '_B':      ord('b'),
         }
 
         keys_to_action = {}
@@ -193,4 +195,22 @@ ACTION_MEANING = {
     15 : "UPLEFTFIRE",
     16 : "DOWNRIGHTFIRE",
     17 : "DOWNLEFTFIRE",
+    20 : "NOOP_B",
+    21 : "FIRE_B",
+    22 : "UP_B",
+    23 : "RIGHT_B",
+    24 : "LEFT_B",
+    25 : "DOWN_B",
+    26 : "UPRIGHT_B",
+    27 : "UPLEFT_B",
+    28 : "DOWNRIGHT_B",
+    29 : "DOWNLEFT_B",
+    30 : "UPFIRE_B",
+    31 : "RIGHTFIRE_B",
+    32 : "LEFTFIRE_B",
+    33 : "DOWNFIRE_B",
+    34 : "UPRIGHTFIRE_B",
+    35 : "UPLEFTFIRE_B",
+    36 : "DOWNRIGHTFIRE_B",
+    37 : "DOWNLEFTFIRE_B",
 }
